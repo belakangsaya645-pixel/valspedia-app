@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard VALS PEDIA</title>
+</head>
+<body>
+
+<h2>Dashboard VALS PEDIA</h2>
+<p>Selamat datang!</p>
+
+<button onclick="logout()">Logout</button>
+
+<script>
+if (localStorage.getItem("login") !== "yes") {
+  window.location.href = "index.html";
+}
+
+function logout() {
+  localStorage.removeItem("login");
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
