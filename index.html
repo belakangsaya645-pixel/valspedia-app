@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VALS PEDIA</title>
+  <title>VALS PEDIA - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <h2>Login VALS PEDIA</h2>
-  <input placeholder="Username"><br><br>
-  <input type="password" placeholder="Password"><br><br>
-  <button>Login</button>
+
+<h2>Login VALS PEDIA</h2>
+
+<input id="user" placeholder="Username"><br><br>
+<input id="pass" type="password" placeholder="Password"><br><br>
+
+<button onclick="login()">Login</button>
+
+<script>
+function login() {
+  var u = document.getElementById("user").value;
+  var p = document.getElementById("pass").value;
+
+  if (u === "" || p === "") {
+    alert("Username & Password wajib diisi");
+    return;
+  }
+
+  // AKUN BARU
+  if (u === "vals" && p === "pedia123") {
+    localStorage.setItem("user", u);
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Login gagal");
+  }
+}
+</script>
+
 </body>
 </html>
