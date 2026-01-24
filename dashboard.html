@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard VALS PEDIA</title>
+  <title>VALS PEDIA - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 
-<h2>Dashboard VALS PEDIA</h2>
-<p>Selamat datang!</p>
+<h2>Login VALS PEDIA</h2>
 
-<button onclick="logout()">Logout</button>
+<input id="user" type="text" placeholder="Username"><br><br>
+<input id="pass" type="password" placeholder="Password"><br><br>
+
+<button id="loginBtn">Login</button>
 
 <script>
-if (localStorage.getItem("login") !== "yes") {
-  window.location.href = "index.html";
-}
+document.getElementById("loginBtn").addEventListener("click", function () {
+  var u = document.getElementById("user").value;
+  var p = document.getElementById("pass").value;
 
-function logout() {
-  localStorage.removeItem("login");
-  window.location.href = "index.html";
-}
+  alert("Ditekan"); // CEK TOMBOL
+
+  if (u === "admin" && p === "12345") {
+    localStorage.setItem("login", "yes");
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Username atau Password salah");
+  }
+});
 </script>
 
 </body>
